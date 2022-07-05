@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Game Đoán Số</h1>
+    <p>Hãy thử đoán xem. Ấn play để chơi</p>
+    <button id="choi" onclick="play();">Play</button>
+</body>
+</html>
+<script>
+    function play() {
+        let number;
+        let maxnum = +prompt ("moi ban nhap max")
+        let result = Math.round(Math.random() * maxnum);
+        let count = 0;
+        do {
+          number = +prompt ("moi ban doan so,so lon nhat la 10");
+          if (number == result) {
+            alert("ban da doan dung");
+            break;
+          }else if (number < result) {
+            alert("So du doan nho hon ket qua");
+          } else {
+            alert("so du doan lon hon ket qua");
+          } count++;
+           if (count >= 3) {
+            alert ("ban da thua");
+            break;
+           }
+        } while ( number != result);    
+    }
+
+</script>
